@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
     <title>Заголовок страницы</title>
+    <style>
+        div#player {
+            display: flex;
+            flex-direction: column;
+            width: 800px;
+            height: 600px;
+            box-shadow: 0 0 16px rgba(0,0,0,0.7);
+        }
+        div.js-video-container {
+            flex-grow: 1;
+        }
+        div.button {
+            display: flex;
+            background-color: black;
+        }
+        div.button button {
+            flex-direction: column;
+            border:none;
+            cursor:pointer;
+            color:white;
+            background-color: rgba(0,0,0,0);
+            line-height: 30px;
+            font-size: 16pt;
+            margin: 5px;
+            padding: 5px;
+        }
+        div.button div {
+            flex-grow: 1;
+        }
+    </style>
 </head>
 <body>
-    <div id="player" style="width: 800px; height: 600px;">
-        <div class="js-video-container" style="width: 100%; height: 100%"></div>
-        <button><i class="fa fa-play" aria-hidden="true"></i></button>
+    <div id="player">
+        <div class="js-video-container"></div>
+        <div class='button'>
+            <button class="js-play-button">
+                <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button class="js-pause-button">
+                <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+            <button class="js-mute-button">
+                <i class="fa fa-volume-up" aria-hidden="true"></i>
+            </button>
+            <button class="js-volume-button">
+                <i class="fa fa-volume-off" aria-hidden="true"></i>
+            </button>
+            <div></div>
+            <button class="js-fullscreen-button">
+                <i class="fa fa-arrows-alt" aria-hidden="true"></i>
+            </button>
+        </div>
         <!-- Here can be placed player controls: play and volume buttons -->
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
